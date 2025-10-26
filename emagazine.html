@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>MIGHS-Emagazine</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+
+
+  <style>
+    body {
+      background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%);
+    }
+
+    .mag-card {
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .mag-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(30, 30, 60, .12);
+    }
+
+    .thumb-canvas {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: .5rem;
+      background: #fff;
+    }
+
+    .mag-title {
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    .card-grid {
+      gap: 1.25rem;
+    }
+
+    .viewer-canvas {
+      width: 100%;
+      height: auto;
+    }
+
+    .modal-xl {
+      max-width: 1200px;
+    }
+
+    .small-muted {
+      font-size: .85rem;
+      color: #6b7280;
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-arrow:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+
+    #prevPageBtn {
+      left: 10px;
+    }
+
+    #nextPageBtn {
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-xxxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Header Start -->
+
+    <div id="navbar-container"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-xxl py-5 page-header position-relative mb-5">
+      <div class="container py-5">
+        <h1 class="display-2 text-white animated slideInDown mb-4">Emagazine</h1>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+
+        <!-- Header -->
+        <section class=" text-white text-center py-5 mb-5">
+          <div class="container">
+            <h1 class="display-5 fw-bold">Our School Emagazine</h1>
+          </div>
+        </section>
+
+        <!-- Emagazine Gallery -->
+        <main class="container py-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="mb-0">Your Magazine Library</h3>
+            <div>
+              <input id="search" class="form-control form-control-sm" placeholder="Search title..."
+                style="min-width:220px;">
+            </div>
+          </div>
+
+          <div id="grid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 card-grid"></div>
+
+          <div class="text-center mt-4 small-muted">Tip: click a cover to open viewer. Use arrows or the controls to
+            navigate pages.</div>
+        </main>
+
+        <div class="modal fade" id="viewerModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content position-relative">
+              <div class="modal-header">
+                <h5 id="viewerTitle" class="modal-title">Viewer</h5>
+                <div class="ms-auto d-flex gap-2 align-items-center">
+                  <div class="small-muted">Page <span id="pageNum">0</span> / <span id="pageCount">0</span></div>
+                  <a id="downloadPdf" href="#" class="btn btn-outline-primary btn-sm" title="Download PDF" download>
+                      <i class="fa fa-download"></i>
+                  </a>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+              </div>
+              <div class="modal-body position-relative" style="min-height:520px;">
+                <button id="prevPageBtn" class="nav-arrow" title="Previous"><i class="fa fa-chevron-left"></i></button>
+                <div id="viewerWrap" class="d-flex justify-content-center align-items-start">
+                  <canvas id="viewerCanvas" class="viewer-canvas shadow-sm"></canvas>
+                </div>
+                <button id="nextPageBtn" class="nav-arrow" title="Next"><i class="fa fa-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <div id="footer-container"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top ytb"><i class="bi bi-arrow-up"></i></a>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js"></script>
+
+  <script>
+    const pdfItems = [
+      {title: 'Magazine - March 2025', url: 'pdf/emagazine/Activity Calendar August 2025.pdf', author: 'Editorial'},
+      {title: 'Design Digest - April 2025', url: 'pdf/emagazine/Activity Calendar August 2025.pdf', author: 'Design Team'}
+    ];
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.worker.min.js';
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('search');
+
+    function createCard(item, index) {
+      const col = document.createElement('div');
+      col.className = 'col mb-3';
+      col.innerHTML = `
+        <div class="card mag-card h-100">
+          <div class="ratio ratio-4x3 p-2 bg-white">
+            <canvas id="thumb-${index}" class="thumb-canvas"></canvas>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="mag-title">${item.title}</div>
+                <div class="small-muted">${item.author || ''}</div>
+              </div>
+              <div class="ms-2 text-end">
+                <button class="btn btn-sm btn-outline-secondary" data-index="${index}" title="Open viewer">Open</button>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      col.querySelector('.mag-card').addEventListener('click', (e)=>{ if(!(e.target.tagName==='BUTTON')) openViewer(index); });
+      col.querySelector('button').addEventListener('click',(e)=>{ e.stopPropagation(); openViewer(index); });
+      return col;
+    }
+
+    function renderGrid(list) {
+      grid.innerHTML = '';
+      list.forEach((item, i)=> grid.appendChild(createCard(item, i)));
+      setTimeout(()=> list.forEach((_, i)=> generateThumb(i)), 50);
+    }
+
+    async function generateThumb(index) {
+      const item = pdfItems[index];
+      const canvas = document.getElementById('thumb-'+index);
+      if(!canvas) return;
+      try{
+        const loading = pdfjsLib.getDocument({url: item.url});
+        const pdf = await loading.promise;
+        const page = await pdf.getPage(1);
+        const viewport = page.getViewport({scale: 1.0});
+        const targetW = canvas.clientWidth * window.devicePixelRatio;
+        const scale = targetW / viewport.width;
+        const vp = page.getViewport({scale});
+        canvas.width = Math.floor(vp.width);
+        canvas.height = Math.floor(vp.height);
+        const ctx = canvas.getContext('2d');
+        const render = page.render({canvasContext: ctx, viewport: vp});
+        await render.promise;
+        pdf.destroy();
+      }catch(err){
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#f3f4f6'; ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle = '#9ca3af'; ctx.font = '24px sans-serif';
+        ctx.fillText('PDF', 20, 40);
+      }
+    }
+
+    searchInput.addEventListener('input', ()=>{
+      const q = searchInput.value.trim().toLowerCase();
+      const filtered = pdfItems.filter(i=> i.title.toLowerCase().includes(q) || (i.author||'').toLowerCase().includes(q));
+      renderGrid(filtered);
+    });
+
+    let currentPdf = null, currentDoc = null, currentPage = 1;
+    const viewerModal = new bootstrap.Modal(document.getElementById('viewerModal'));
+    const viewerCanvas = document.getElementById('viewerCanvas');
+    const pageNum = document.getElementById('pageNum');
+    const pageCount = document.getElementById('pageCount');
+    const viewerTitle = document.getElementById('viewerTitle');
+    const downloadBtn = document.getElementById('downloadPdf');
+
+    async function openViewer(index) {
+      currentPdf = pdfItems[index];
+  viewerTitle.textContent = currentPdf.title;
+  downloadBtn.href = currentPdf.url;
+  downloadBtn.download = currentPdf.title.replace(/[^a-z0-9]/gi, '_') + '.pdf'; // Suggests a filename
+  
+  currentPage = 1;
+  viewerModal.show();
+      try{
+        const loading = pdfjsLib.getDocument({url: currentPdf.url});
+        currentDoc = await loading.promise;
+        currentPage = 1;
+        pageCount.textContent = currentDoc.numPages;
+        await renderPage(currentPage);
+      }catch(err){
+        console.error('Failed to load PDF', err);
+      }
+    }
+
+    async function renderPage(pageNo) {
+      if(!currentDoc) return;
+      const page = await currentDoc.getPage(pageNo);
+      const wrap = document.getElementById('viewerWrap');
+      const maxWidth = Math.min(wrap.clientWidth - 40, 1100);
+      const viewport = page.getViewport({scale:1});
+      const scale = (maxWidth * window.devicePixelRatio) / viewport.width;
+      const vp = page.getViewport({scale});
+      viewerCanvas.width = vp.width;
+      viewerCanvas.height = vp.height;
+      viewerCanvas.style.width = (vp.width / window.devicePixelRatio) + 'px';
+      viewerCanvas.style.height = (vp.height / window.devicePixelRatio) + 'px';
+      const ctx = viewerCanvas.getContext('2d');
+      ctx.clearRect(0,0,viewerCanvas.width, viewerCanvas.height);
+      await page.render({canvasContext: ctx, viewport: vp}).promise;
+      pageNum.textContent = pageNo;
+    }
+
+    document.getElementById('prevPageBtn').addEventListener('click', async ()=>{
+      if(!currentDoc) return; if(currentPage <= 1) return;
+      currentPage--; await renderPage(currentPage);
+    });
+    document.getElementById('nextPageBtn').addEventListener('click', async ()=>{
+      if(!currentDoc) return; if(currentPage >= currentDoc.numPages) return;
+      currentPage++; await renderPage(currentPage);
+    });
+
+    document.addEventListener('keydown', (e)=>{
+      if(document.querySelector('.modal.show')){
+        if(e.key === 'ArrowLeft') document.getElementById('prevPageBtn').click();
+        if(e.key === 'ArrowRight') document.getElementById('nextPageBtn').click();
+      }
+    });
+
+    renderGrid(pdfItems);
+  </script>
+</body>
+
+</html>
