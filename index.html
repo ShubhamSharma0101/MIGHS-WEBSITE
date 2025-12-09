@@ -25,54 +25,6 @@
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <!-- Template Stylesheet -->
    <link href="css/style.css" rel="stylesheet">
-   <!-- Read more Text -->
-   <script>
-      function myFunctiona() { var dots = document.getElementById("dots1"); var moreText = document.getElementById("more1"); var btnText = document.getElementById("myBtn1"); if (dots.style.display === "none") { dots.style.display = "inline"; btnText.innerHTML = "Read more"; moreText.style.display = "none"; } else { dots.style.display = "none"; btnText.innerHTML = "Read less"; moreText.style.display = "inline"; } }
-   </script>
-   <!-- Read more Text -->
-   <script>
-      function myFunctionb() { var dots = document.getElementById("dots2"); var moreText = document.getElementById("more2"); var btnText = document.getElementById("myBtn2"); if (dots.style.display === "none") { dots.style.display = "inline"; btnText.innerHTML = "Read more"; moreText.style.display = "none"; } else { dots.style.display = "none"; btnText.innerHTML = "Read less"; moreText.style.display = "inline"; } }
-   </script>
-   <!-- Read more Text -->
-   <script>
-      function myFunctionc() { var dots = document.getElementById("dots3"); var moreText = document.getElementById("more3"); var btnText = document.getElementById("myBtn3"); if (dots.style.display === "none") { dots.style.display = "inline"; btnText.innerHTML = "Read more"; moreText.style.display = "none"; } else { dots.style.display = "none"; btnText.innerHTML = "Read less"; moreText.style.display = "inline"; } }
-   </script>
-   <!-- Read more Text -->
-   <script>
-      function myFunctiond() { var dots = document.getElementById("dots4"); var moreText = document.getElementById("more4"); var btnText = document.getElementById("myBtn4"); if (dots.style.display === "none") { dots.style.display = "inline"; btnText.innerHTML = "Read more"; moreText.style.display = "none"; } else { dots.style.display = "none"; btnText.innerHTML = "Read less"; moreText.style.display = "inline"; } }
-   </script>
-   <script>
-      function playFullscreenVideo() {
-         const video = document.getElementById('fullscreenVideo');
-         video.style.display = 'block';
-
-         // Play video
-         video.play();
-
-         // Request fullscreen
-         if (video.requestFullscreen) {
-            video.requestFullscreen();
-         } else if (video.webkitRequestFullscreen) { // Safari
-            video.webkitRequestFullscreen();
-         } else if (video.msRequestFullscreen) { // IE11
-            video.msRequestFullscreen();
-         }
-
-         // Optional: hide video when exited from fullscreen
-         video.onfullscreenchange = () => {
-            if (!document.fullscreenElement) {
-               video.style.display = 'none';
-               video.pause();
-            }
-         };
-         video.onwebkitfullscreenchange = () => {
-            if (!document.webkitFullscreenElement) {
-               video.style.display = 'none';
-               video.pause();
-            }
-         };
-      }
-   </script>
 </head>
 
 <body>
@@ -106,36 +58,37 @@
          </div>
       </div>
 
-      <a href="" class="btn fixed-left-button">What’s New</a>
+      <div id="navbar-container"></div>
+
+
+
+
+
+      <!-- <a href="" class="btn fixed-left-button">What’s New</a>
       <a href="" class="btn fixed-right-button">Register</a>
-      <a href="" class="btn fixed1-right-button">T.C.</a>
+      <a href="" class="btn fixed1-right-button">T.C.</a> -->
 
 
       <!-- Header Start -->
       <!-- Social Icons Top Bar -->
 
-      <div class="container-fluid bg-dark py-1">
+      <!-- <div class="container-fluid bg-dark py-1">
          <div class="row">
             <div class="col-12 d-flex justify-content-end align-items-center text-white flex-wrap">
 
-               <!-- Social Icon -->
                <a href="#" target="_blank" class="text-white me-2">
                   <i class="fab fa-facebook-f"></i>
                </a>
 
-               <!-- Separator -->
                <span class="d-none d-md-block mx-2">|</span>
 
-               <!-- Phone -->
                <span class="me-3">
                   <i class="lnr lnr-phone-handset"></i>
                   <span class="ms-1">26664601</span>
                </span>
 
-               <!-- Separator -->
                <span class="d-none d-md-block mx-2">|</span>
 
-               <!-- Email -->
                <a href="mailto:maryimmaculate_kalina@redifmail.com" class="text-white text-decoration-none">
                   <i class="lnr lnr-envelope"></i>
                   <span class="ms-1">maryimmaculate_kalina@redifmail.com</span>
@@ -143,7 +96,7 @@
 
             </div>
          </div>
-      </div>
+      </div> -->
 
 
 
@@ -153,17 +106,15 @@
       <!-- Border Image Divider -->
       <!-- <div style="background-image:url(''); background-repeat:repeat; height: 19px;margin-top: -10px;"></div> -->
       <!-- School Name & Logo Section -->
-      <div class="container-fluid py-2">
+      <!-- <div class="container-fluid py-2">
          <div class="d-block d-md-flex gap-2  align-items-center">
 
-            <!-- Logo -->
             <div class="text-center">
                <a href="index.html">
                   <img class="img-fluid mx-auto mx-md-0 d-block" src="img/Index/MIGHSK_Logo.png" alt="School Logo">
                </a>
             </div>
 
-            <!-- Heading -->
             <div class="text-center">
                <h3 class="pt-2 mb-0 fs-2 fw-bold">
                   Mary Immaculate Girls’ High School, Kalina
@@ -171,13 +122,13 @@
             </div>
 
          </div>
-      </div>
+      </div> -->
 
 
 
       <!-- Header End -->
       <!-- Navbar Start -->
-      <nav class="navbar navbar-expand-lg sticky-top">
+      <!-- <nav class="navbar navbar-expand-lg sticky-top">
          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"><i style="font-size: 30px;" class="bi bi-list"></i></span>
          </button>
@@ -266,9 +217,11 @@
             </div>
          </div>
          
-      </nav>
+      </nav> -->
 
       <!-- Navbar End -->
+
+
       <!-- Carousel Start -->
       <div class="container-fluid" style="padding: 0rem 0rem;">
          <div class="owl-carousel header-carousel position-relative">
@@ -297,7 +250,7 @@
                </div>
             </div>
             <div class="owl-carousel-item position-relative">
-               <img class="img-fluid" src="img/Index/Banner Slider (5).jpeg" alt="">
+               <img class="img-fluid" src="img/Index/Banner Slider (5).jpg" alt="">
                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
                   style="background: rgba(0, 0, 0, .2);">
                </div>
@@ -417,14 +370,13 @@
       <!-- About End -->
       <!-- Virtual Tour -->
       <!-- Virtual Tour Section -->
-      <div class="container-fluid py-5" id="virtual" style="background: white;">
+      <!-- <div class="container-fluid py-5" id="virtual" style="background: white;">
          <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                <h1 class="mb-3">Virtual Tour</h1>
                <h2 class="mb-3"> Mary Immaculate Girls’ High School, Kalina</h2>
             </div>
             <div class="row align-items-center g-5">
-               <!-- Video Thumbnail -->
                <div class="col-12 wow fadeIn" data-wow-delay=".3s">
                   <div class="video-thumbnail position-relative rounded-4 overflow-hidden shadow"
                      onclick="playFullscreenVideo()"
@@ -440,268 +392,269 @@
             </div>
          </div>
       </div>
-      <!-- Hidden Fullscreen Video -->
       <video id="fullscreenVideo" style="display: none;" controls>
          <source src="img/dwpsIntro.mp4" type="video/mp4">
          Your browser does not support the video tag.
-      </video>
+      </video> -->
       <!-- virtual tour -->
       <!-- Classes Start -->
-      <div class="container-xxl py-5">
-         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-               <h1 class="mb-3">Co-Curricular Activities</h1>
-            </div>
-            <div class="row g-5 ">
-               <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                  <div class="classes-item">
-                     <div class="bg-light rounded-circle w-75 mx-auto p-3">
+    
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Co-Curricular Activities</h1>
+        </div>
+        <div class="row g-5 ">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="classes-item">
+                    <div class="bg-light rounded-circle w-75 mx-auto p-3">
                         <img class="img-fluid rounded-circle" src="img/classes-1.jpg" alt="">
-                     </div>
-                     <div class="bg-light rounded p-4 pt-5 mt-n5">
+                    </div>
+                    <div class="bg-light rounded p-4 pt-5 mt-n5">
                         <a class="d-block text-center h3 mt-3 mb-4" href="">Art & Craft </a>
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                           <div class="d-flex align-items-center jst">
-                              <p>Through the regular art and crafts classes we help young children explore
-                                 and
-                                 express their emotions, share how they relate to their family and
-                                 friends
-                                 talk about their difficulties, their future dreams even
-                                 if
-                                 <span id="dots1">...</span><span id="more1">and aspirations,
-                                    they have not yet developed a full vocabulary to do so. It also
-                                    helps in
-                                    developing courage and a healthy self-esteem.</span>
-                              </p>
-                           </div>
+                            <div class="d-flex align-items-center jst">
+                                <p>Through the regular art and crafts classes we help young children explore
+                                    and
+                                    express their emotions, share how they relate to their family and
+                                    friends
+                                    talk about their difficulties, their future dreams even
+                                    if
+                                    <span id="dots1">...</span><span id="more1" style="display: none;">and aspirations,
+                                        they have not yet developed a full vocabulary to do so. It also
+                                        helps in
+                                        developing courage and a healthy self-esteem.</span>
+                                </p>
+                            </div>
                         </div>
-                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="myFunctiona()" id="myBtn1">Read
-                           More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                  <div class="classes-item">
-                     <div class="bg-light rounded-circle w-75 mx-auto p-3">
+                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="toggleReadMore(1)" id="myBtn1">Read
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="classes-item">
+                    <div class="bg-light rounded-circle w-75 mx-auto p-3">
                         <img class="img-fluid rounded-circle" src="img/classes-2.jpg" alt="">
-                     </div>
-                     <div class="bg-light rounded p-4 pt-5 mt-n5">
+                    </div>
+                    <div class="bg-light rounded p-4 pt-5 mt-n5">
                         <a class="d-block text-center h3 mt-3 mb-4" href="">Child centered approach</a>
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                           <div class="d-flex align-items-center jst">
-                              <p>We place the pupil at the centre of the learning process in classroom.
-                                 The
-                                 teacher provides the opportunities to the students to learn
-                                 independently
-                                 and <span id="dots2">...</span><span id="more2"> from one another and
-                                    coaches them in the skills they need to learn and
-                                    practice, it inspires kids to want to learn by giving them the
-                                    steering
-                                    wheel to their educational path. Individualised learning helps
-                                    children
-                                    become more independent. Students learn to direct their
-                                    fascinations,
-                                    ask
-                                    questions, and work on their own as well as part of a group.</span>
-                              </p>
-                           </div>
+                            <div class="d-flex align-items-center jst">
+                                <p>We place the pupil at the centre of the learning process in classroom.
+                                    The
+                                    teacher provides the opportunities to the students to learn
+                                    independently
+                                    and <span id="dots2">...</span><span id="more2" style="display: none;"> from one another and
+                                        coaches them in the skills they need to learn and
+                                        practice, it inspires kids to want to learn by giving them the
+                                        steering
+                                        wheel to their educational path. Individualised learning helps
+                                        children
+                                        become more independent. Students learn to direct their
+                                        fascinations,
+                                        ask
+                                        questions, and work on their own as well as part of a group.</span>
+                                </p>
+                            </div>
                         </div>
-                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="myFunctionb()" id="myBtn2">Read
-                           More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                  <div class="classes-item">
-                     <div class="bg-light rounded-circle w-75 mx-auto p-3">
+                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="toggleReadMore(2)" id="myBtn2">Read
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="classes-item">
+                    <div class="bg-light rounded-circle w-75 mx-auto p-3">
                         <img class="img-fluid rounded-circle" src="img/LearnEng.jpg" alt="">
-                     </div>
-                     <div class="bg-light rounded p-4 pt-5 mt-n5">
+                    </div>
+                    <div class="bg-light rounded p-4 pt-5 mt-n5">
                         <a class="d-block text-center h3 mt-3 mb-4" href="">Spoken English <br> &nbsp;</a>
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                           <div class="d-flex align-items-center jst">
-                              <p>We conduct regular classes of activity based communicative English,
-                                 keeping
-                                 in view the fact that children who are studying in an English-speaking
-                                 school like us, <span id="dots3">...</span><span id="more3">grow up
-                                    speaking
-                                    better English. Since English is the
-                                    language of science-technology, research and internet. English
-                                    speakers
-                                    have
-                                    more opportunities to work with others in these fields and to share
-                                    ideas
-                                    and innovations. It always give an advantageous core at hotels and
-                                    in
-                                    areas
-                                    frequented by tourists. It gives a lot of satisfaction and
-                                    self-confidence.</span>
-                              </p>
-                           </div>
+                            <div class="d-flex align-items-center jst">
+                                <p>We conduct regular classes of activity based communicative English,
+                                    keeping
+                                    in view the fact that children who are studying in an English-speaking
+                                    school like us, <span id="dots3">...</span><span id="more3" style="display: none;">grow up
+                                        speaking
+                                        better English. Since English is the
+                                        language of science-technology, research and internet. English
+                                        speakers
+                                        have
+                                        more opportunities to work with others in these fields and to share
+                                        ideas
+                                        and innovations. It always give an advantageous core at hotels and
+                                        in
+                                        areas
+                                        frequented by tourists. It gives a lot of satisfaction and
+                                        self-confidence.</span>
+                                </p>
+                            </div>
                         </div>
-                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="myFunctionc()" id="myBtn3">Read
-                           More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                  <div class="classes-item">
-                     <div class="bg-light rounded-circle w-75 mx-auto p-3">
-                        <img class="img-fluid rounded-circle" src="img/classes-4.jpg" alt="">
-                     </div>
-                     <div class="bg-light rounded p-4 pt-5 mt-n5">
-                        <a class="d-block text-center h3 mt-3 mb-4" href="">Health and physical
-                           education</a>
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                           <div class="d-flex align-items-center jst">
-                              <p>Physical and mental fitness is the key ingredient for a healthy
-                                 lifestyle.
-                                 Regular physical activities help in better absorption of nutrients in the
-                                 body and also helps in improving<span id="dots4">...</span><span id="more4">
-                                    cardiovascular health and
-                                    developing
-                                    muscular strength. During the online session we organize Zumba and
-                                    Yoga
-                                    classes. For the pre-primary section we design games using the
-                                    materials
-                                    easily available at home. These games enhances their thinking,
-                                    problem
-                                    solving skills and keeps them away from mobiles.</span>
-                              </p>
-                           </div>
-                        </div>
-                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="myFunctiond()" id="myBtn4">Read
-                           More</a>
-                     </div>
-                  </div>
-               </div>
+                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="toggleReadMore(3)" id="myBtn3">Read
+                            More</a>
+                    </div>
+                </div>
             </div>
-            <div class="row g-5 pt-5">
-               <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                  <div class="classes-item">
-                     <div class="bg-light rounded-circle w-75 mx-auto p-3">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="classes-item">
+                    <div class="bg-light rounded-circle w-75 mx-auto p-3">
+                        <img class="img-fluid rounded-circle" src="img/classes-4.jpg" alt="">
+                    </div>
+                    <div class="bg-light rounded p-4 pt-5 mt-n5">
+                        <a class="d-block text-center h3 mt-3 mb-4" href="">Health and physical
+                            education</a>
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="d-flex align-items-center jst">
+                                <p>Physical and mental fitness is the key ingredient for a healthy
+                                    lifestyle.
+                                    Regular physical activities help in better absorption of nutrients in the
+                                    body and also helps in improving<span id="dots4">...</span><span id="more4" style="display: none;">
+                                        cardiovascular health and
+                                        developing
+                                        muscular strength. During the online session we organize Zumba and
+                                        Yoga
+                                        classes. For the pre-primary section we design games using the
+                                        materials
+                                        easily available at home. These games enhances their thinking,
+                                        problem
+                                        solving skills and keeps them away from mobiles.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="toggleReadMore(4)" id="myBtn4">Read
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <div class="row g-5 pt-5">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="classes-item">
+                    <div class="bg-light rounded-circle w-75 mx-auto p-3">
                         <img class="img-fluid rounded-circle" src="img/classes-1.jpg" alt="">
-                     </div>
-                     <div class="bg-light rounded p-4 pt-5 mt-n5">
+                    </div>
+                    <div class="bg-light rounded p-4 pt-5 mt-n5">
                         <a class="d-block text-center h3 mt-3 mb-4" href="">Library</a>
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                           <div class="d-flex align-items-center jst">
-                              <p>Through the regular art and crafts classes we help young children explore
-                                 and
-                                 express their emotions, share how they relate to their family and
-                                 friends
-                                 talk about their difficulties, their future dreams even
-                                 if
-                                 <span id="dots1">...</span><span id="more1">and aspirations,
-                                    they have not yet developed a full vocabulary to do so. It also
-                                    helps in
-                                    developing courage and a healthy self-esteem.</span>
-                              </p>
-                           </div>
+                            <div class="d-flex align-items-center jst">
+                                <p>Through the regular art and crafts classes we help young children explore
+                                    and
+                                    express their emotions, share how they relate to their family and
+                                    friends
+                                    talk about their difficulties, their future dreams even
+                                    if
+                                    <span id="dots5">...</span><span id="more5" style="display: none;">and aspirations,
+                                        they have not yet developed a full vocabulary to do so. It also
+                                        helps in
+                                        developing courage and a healthy self-esteem.</span>
+                                </p>
+                            </div>
                         </div>
-                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="myFunctiona()" id="myBtn1">Read
-                           More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                  <div class="classes-item">
-                     <div class="bg-light rounded-circle w-75 mx-auto p-3">
+                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="toggleReadMore(5)" id="myBtn5">Read
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="classes-item">
+                    <div class="bg-light rounded-circle w-75 mx-auto p-3">
                         <img class="img-fluid rounded-circle" src="img/classes-2.jpg" alt="">
-                     </div>
-                     <div class="bg-light rounded p-4 pt-5 mt-n5">
+                    </div>
+                    <div class="bg-light rounded p-4 pt-5 mt-n5">
                         <a class="d-block text-center h3 mt-3 mb-4" href="">Dance</a>
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                           <div class="d-flex align-items-center jst">
-                              <p>We place the pupil at the centre of the learning process in classroom.
-                                 The
-                                 teacher provides the opportunities to the students to learn
-                                 independently
-                                 and <span id="dots2">...</span><span id="more2"> from one another and
-                                    coaches them in the skills they need to learn and
-                                    practice, it inspires kids to want to learn by giving them the
-                                    steering
-                                    wheel to their educational path. Individualised learning helps
-                                    children
-                                    become more independent. Students learn to direct their
-                                    fascinations,
-                                    ask
-                                    questions, and work on their own as well as part of a group.</span>
-                              </p>
-                           </div>
+                            <div class="d-flex align-items-center jst">
+                                <p>We place the pupil at the centre of the learning process in classroom.
+                                    The
+                                    teacher provides the opportunities to the students to learn
+                                    independently
+                                    and <span id="dots6">...</span><span id="more6" style="display: none;"> from one another and
+                                        coaches them in the skills they need to learn and
+                                        practice, it inspires kids to want to learn by giving them the
+                                        steering
+                                        wheel to their educational path. Individualised learning helps
+                                        children
+                                        become more independent. Students learn to direct their
+                                        fascinations,
+                                        ask
+                                        questions, and work on their own as well as part of a group.</span>
+                                </p>
+                            </div>
                         </div>
-                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="myFunctionb()" id="myBtn2">Read
-                           More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                  <div class="classes-item">
-                     <div class="bg-light rounded-circle w-75 mx-auto p-3">
+                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="toggleReadMore(6)" id="myBtn6">Read
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="classes-item">
+                    <div class="bg-light rounded-circle w-75 mx-auto p-3">
                         <img class="img-fluid rounded-circle" src="img/LearnEng.jpg" alt="">
-                     </div>
-                     <div class="bg-light rounded p-4 pt-5 mt-n5">
+                    </div>
+                    <div class="bg-light rounded p-4 pt-5 mt-n5">
                         <a class="d-block text-center h3 mt-3 mb-4" href="">Music<br> &nbsp;</a>
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                           <div class="d-flex align-items-center jst">
-                              <p>We conduct regular classes of activity based communicative English,
-                                 keeping
-                                 in view the fact that children who are studying in an English-speaking
-                                 school like us, <span id="dots3">...</span><span id="more3">grow up
-                                    speaking
-                                    better English. Since English is the
-                                    language of science-technology, research and internet. English
-                                    speakers
-                                    have
-                                    more opportunities to work with others in these fields and to share
-                                    ideas
-                                    and innovations. It always give an advantageous core at hotels and
-                                    in
-                                    areas
-                                    frequented by tourists. It gives a lot of satisfaction and
-                                    self-confidence.</span>
-                              </p>
-                           </div>
+                            <div class="d-flex align-items-center jst">
+                                <p>We conduct regular classes of activity based communicative English,
+                                    keeping
+                                    in view the fact that children who are studying in an English-speaking
+                                    school like us, <span id="dots7">...</span><span id="more7" style="display: none;">grow up
+                                        speaking
+                                        better English. Since English is the
+                                        language of science-technology, research and internet. English
+                                        speakers
+                                        have
+                                        more opportunities to work with others in these fields and to share
+                                        ideas
+                                        and innovations. It always give an advantageous core at hotels and
+                                        in
+                                        areas
+                                        frequented by tourists. It gives a lot of satisfaction and
+                                        self-confidence.</span>
+                                </p>
+                            </div>
                         </div>
-                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="myFunctionc()" id="myBtn3">Read
-                           More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                  <div class="classes-item">
-                     <div class="bg-light rounded-circle w-75 mx-auto p-3">
-                        <img class="img-fluid rounded-circle" src="img/classes-4.jpg" alt="">
-                     </div>
-                     <div class="bg-light rounded p-4 pt-5 mt-n5">
-                        <a class="d-block text-center h3 mt-3 mb-4" href="">Health and physical
-                           education</a>
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                           <div class="d-flex align-items-center jst">
-                              <p>Physical and mental fitness is the key ingredient for a healthy
-                                 lifestyle.
-                                 Regular physical activities help in better absorption of nutrients in the
-                                 body and also helps in improving<span id="dots4">...</span><span id="more4">
-                                    cardiovascular health and
-                                    developing
-                                    muscular strength. During the online session we organize Zumba and
-                                    Yoga
-                                    classes. For the pre-primary section we design games using the
-                                    materials
-                                    easily available at home. These games enhances their thinking,
-                                    problem
-                                    solving skills and keeps them away from mobiles.</span>
-                              </p>
-                           </div>
-                        </div>
-                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="myFunctiond()" id="myBtn4">Read
-                           More</a>
-                     </div>
-                  </div>
-               </div>
+                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="toggleReadMore(7)" id="myBtn7">Read
+                            More</a>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="classes-item">
+                    <div class="bg-light rounded-circle w-75 mx-auto p-3">
+                        <img class="img-fluid rounded-circle" src="img/classes-4.jpg" alt="">
+                    </div>
+                    <div class="bg-light rounded p-4 pt-5 mt-n5">
+                        <a class="d-block text-center h3 mt-3 mb-4" href="">Health and physical
+                            education</a>
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="d-flex align-items-center jst">
+                                <p>Physical and mental fitness is the key ingredient for a healthy
+                                    lifestyle.
+                                    Regular physical activities help in better absorption of nutrients in the
+                                    body and also helps in improving<span id="dots8">...</span><span id="more8" style="display: none;">
+                                        cardiovascular health and
+                                        developing
+                                        muscular strength. During the online session we organize Zumba and
+                                        Yoga
+                                        classes. For the pre-primary section we design games using the
+                                        materials
+                                        easily available at home. These games enhances their thinking,
+                                        problem
+                                        solving skills and keeps them away from mobiles.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary rounded-pill py-1 px-3 ytb" onclick="toggleReadMore(8)" id="myBtn8">Read
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
       <!-- Classes End -->
       <!-- Appointment Start -->
       <div class="container-xxl py-5">
@@ -711,52 +664,71 @@
                   <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                      <div class="h-100 d-flex flex-column justify-content-center p-5">
                         <h1 class="mb-4">Contact Us</h1>
-                        <form>
+
+                        <form id="contactForm">
                            <div class="row g-3">
+
                               <div class="col-sm-6">
                                  <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="gname"
-                                       placeholder="Guardian Name">
+                                    <input type="text" class="form-control border-0" id="gname" name="gname"
+                                       placeholder="Guardian Name" required>
                                     <label for="gname">Guardian Name</label>
                                  </div>
                               </div>
+
                               <div class="col-sm-6">
                                  <div class="form-floating">
-                                    <input type="email" class="form-control border-0" id="gmail"
-                                       placeholder="Guardian Email">
+                                    <input type="email" class="form-control border-0" id="gmail" name="gmail"
+                                       placeholder="Guardian Email" required>
                                     <label for="gmail">Guardian Email</label>
                                  </div>
                               </div>
+
                               <div class="col-sm-6">
                                  <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="cname"
-                                       placeholder="Child Name">
+                                    <input type="text" class="form-control border-0" id="cname" name="cname"
+                                       placeholder="Child Name" required>
                                     <label for="cname">Child Name</label>
                                  </div>
                               </div>
+
                               <div class="col-sm-6">
                                  <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
+                                    <input type="text" class="form-control border-0" id="cage" name="cage"
+                                       placeholder="Child Age" required>
                                     <label for="cage">Child Age</label>
                                  </div>
                               </div>
+
                               <div class="col-12">
                                  <div class="form-floating">
                                     <textarea class="form-control border-0" placeholder="Leave a message here"
-                                       id="message" style="height: 100px"></textarea>
+                                       id="message" name="message" style="height: 100px" required></textarea>
                                     <label for="message">Message</label>
                                  </div>
                               </div>
+
+                              <!-- Message Box Appears Here Automatically -->
+                              <div id="msgBoxHolder" class="col-12"></div>
+
                               <div class="col-12">
-                                 <button class="btn btn-primary w-100 py-3 ytb" type="submit">Submit</button>
+                                 <button id="subBtn" class="btn btn-primary w-100 py-3 ytb" type="submit">
+                                    Submit
+                                 </button>
                               </div>
+
                            </div>
                         </form>
+
                      </div>
                   </div>
+
                   <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                      <div class="position-relative h-100">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.6763074920927!2d72.8676303!3d19.077964299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8f14adb62d9%3A0x9f98b60305cb2ce6!2sMary%20Immaculate%20Girls&#39;%20High%20School%2C%20Kalina!5e0!3m2!1sen!2sin!4v1759579523032!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.6763074920927!2d72.8676303!3d19.077964299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8f14adb62d9%3A0x9f98b60305cb2ce6!2sMary%20Immaculate%20Girls&#39;%20High%20School%2C%20Kalina!5e0!3m2!1sen!2sin!4v1759579523032!5m2!1sen!2sin"
+                           width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                           referrerpolicy="no-referrer-when-downgrade"></iframe>
                      </div>
                   </div>
                </div>
@@ -765,18 +737,18 @@
       </div>
       <!-- Appointment End -->
       <!-- Team Start -->
-      <div class="container-xxl py-5">
+      <div class="container-xxl py-5" id="ourMentor">
          <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                <h1 class="mb-3">Our Mentor</h1>
             </div>
             <div class="row g-4">
-               <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+               <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                   <div class="team-item position-relative">
                      <div class="team-text text-center">
-                        <img class="w-100 pd" src="img/team-01.jpg" alt="">
-                        <h4 class="pdt">Name</h4>
-                        <p>Mentor</p>
+                        <img class="w-100 pd" src="/img/mentor/Sr Sejal Paul Principal.jpeg" alt="">
+                        <h4 class="pdt">Sr. Sejal	Paul</h4>
+                        <p>Principal</p>
                         <!-- <div class="d-flex align-items-center">
                               <a class="btn btn-square btn-primary mx-1" href=""><i
                                       class="fab fa-facebook-f"></i></a>
@@ -785,16 +757,16 @@
                               <a class="btn btn-square btn-primary  mx-1" href=""><i
                                       class="fab fa-instagram"></i></a>
                               </div> -->
-                        <p> Mary Immaculate Girls’ High School, Kalina</p>
+                        <!-- <p> Mary Immaculate Girls’ High School, Kalina</p> -->
                      </div>
                   </div>
                </div>
-               <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+               <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                   <div class="team-item position-relative">
                      <div class="team-text text-center">
-                        <img class="w-100 pd" src="img/team-01.jpg" alt="">
-                        <h4 class="pdt">Name</h4>
-                        <p>Mentor</p>
+                        <img class="w-100 pd" src="/img/mentor/Sr Sangeeta Lopez Manager.jpg" alt="">
+                        <h4 class="pdt">Sr. Sangeeta Lopez</h4>
+                        <p>Manager</p>
                         <!-- <div class="d-flex align-items-center">
                               <a class="btn btn-square btn-primary mx-1" href=""><i
                                       class="fab fa-facebook-f"></i></a>
@@ -803,28 +775,28 @@
                               <a class="btn btn-square btn-primary  mx-1" href=""><i
                                       class="fab fa-instagram"></i></a>
                               </div> -->
-                        <p> Mary Immaculate Girls’ High School, Kalina</p>
+                        <!-- <p> Mary Immaculate Girls’ High School, Kalina</p> -->
                      </div>
                   </div>
                </div>
-               <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+               <!-- <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
                   <div class="team-item position-relative">
                      <div class="team-text text-center">
                         <img class="w-100 pd" src="img/team-01.jpg" alt="">
                         <h4 class="pdt">Name</h4>
                         <p>Mentor</p>
-                        <!-- <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center">
                               <a class="btn btn-square btn-primary mx-1" href=""><i
                                       class="fab fa-facebook-f"></i></a>
                               <a class="btn btn-square btn-primary  mx-1" href=""><i
                                       class="fab fa-twitter"></i></a>
                               <a class="btn btn-square btn-primary  mx-1" href=""><i
                                       class="fab fa-instagram"></i></a>
-                              </div> -->
+                              </div>
                         <p> Mary Immaculate Girls’ High School, Kalina</p>
                      </div>
                   </div>
-               </div>
+               </div> -->
 
 
             </div>
@@ -841,43 +813,44 @@
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                <div class="testimonial-item bg-light rounded p-5">
-                  <p class="fs-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo vel iste pariatur ad,
-                     quos repellat provident eos ducimus quae dicta sint repudiandae obcaecati ipsum voluptatem, unde
-                     debitis, eveniet amet magnam!
+                  <p class="fs-6">Mary Immaculate Girls High School Kalina offers an exceptional environment for girls,
+                     combining top-tier education with a strong focus on discipline and safety. The school’s commitment
+                     to high academic standards ensures that every student is given the tools to succeed, while
+                     fostering a respectful and structured atmosphere. Discipline is taught as a core value, helping
+                     students develop responsibility and integrity. Additionally, the safety of the girls is a top
+                     priority, with comprehensive security measures and a caring, supportive community.
+                     <br>
+                     <br>
+                     Mary Immaculate Girls High School Kalina truly provides a balanced and nurturing environment for
+                     girls to thrive both academically and personally. Highly recommended!
                   </p>
                   <div class="d-flex align-items-center bg-white me-n5">
-                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/man.png" style="width: 90px;">
+                     <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/man.png" style="width: 90px;"> -->
                      <div class="ps-3">
-                        <h3 class="mb-1">Name</h3>
+                        <h3 class="mb-1">Shihab Abdul Samath</h3>
                      </div>
                      <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
                   </div>
                </div>
                <div class="testimonial-item bg-light rounded p-5">
-                  <p class="fs-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, deleniti soluta
-                     quo atque hic architecto cum suscipit ipsum molestias harum cupiditate illum, expedita
-                     exercitationem esse sed odio aut reprehenderit laborum.
-                  </p>
-                  <div class="d-flex align-items-center bg-white me-n5">
-                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/man.png" style="width: 90px;">
-                     <div class="ps-3">
-                        <h3 class="mb-1">Name</h3>
-                     </div>
-                     <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
-                  </div>
-               </div>
-               <div class="testimonial-item bg-light rounded p-5">
-                  <p class="fs-6">
+                  <p class="fs-6">Mary Immaculate Girls' High School, located in Kalina, is a prestigious institution
+                     known for its commitment to academic excellence and holistic development.
 
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptas nisi minima aspernatur
-                     deleniti ratione nihil amet corrupti quo inventore quibusdam quas et assumenda, animi aliquam?
-                     Ipsum debitis at ut.
+                  <p class="fs-6">The teachers are well-mannered, kind, and always ready to support their students. The
+                     school fosters a vibrant environment by celebrating various festivals, hosting competitions, and
+                     organizing grand annual functions.
+                  </p>
+                  <p class="fs-6">Students are encouraged to showcase their talents through events such as singing,
+                     dancing, acting, and other skill-based performances. The school also actively participates in
+                     interschool competitions, and its band is recognized as one of the finest.
+                  </p>
+                  <p class="fs-6">There is excellent communication and coordination among teachers, students, and
+                     parents, ensuring a strong support system for every child’s growth.
                   </p>
                   <div class="d-flex align-items-center bg-white me-n5">
-                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/man.png"
-                        style="width: 90px; height: 90px;">
+                     <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/man.png" style="width: 90px;"> -->
                      <div class="ps-3">
-                        <h3 class="mb-1">Name</h3>
+                        <h3 class="mb-1">Sharal D'Souza</h3>
                      </div>
                      <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
                   </div>
@@ -886,23 +859,26 @@
          </div>
       </div>
       <!-- Testimonial End -->
+
       <!-- Footer Start -->
-       <div id="footer-container"></div>
+      <div id="footer-container"></div>
       <!-- Footer End -->
+
       <!-- Back to Top -->
       <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top ytb"><i class="bi bi-arrow-up"></i></a>
    </div>
    <!-- JavaScript Libraries -->
    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="lib/wow/wow.min.js"></script>
-   <script src="lib/easing/easing.min.js"></script>
-   <script src="lib/waypoints/waypoints.min.js"></script>
-   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+   <script src="/lib/wow/wow.min.js"></script>
+   <script src="/lib/easing/easing.min.js"></script>
+   <script src="/lib/waypoints/waypoints.min.js"></script>
+   <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/footer.js"></script>
+   <script src="/js/main.js"></script>
+   <script src="/js/navbar.js"></script>
+   <script src="/js/footer.js"></script>
    <script>
       $(document).ready(function () {
          if (window.matchMedia("(max-width: 767px)").matches) {
@@ -913,6 +889,7 @@
          }
       });
    </script>
+
 </body>
 
 </html>

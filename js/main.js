@@ -79,3 +79,91 @@
     
 })(jQuery);
 
+
+
+
+
+
+// Set type id in session
+function setTypeId(id) {
+	let data = '';
+	sessionStorage.setItem('typeId', id);
+
+	if (window.location.pathname.includes('photo-gallery.html')) {
+		// We are already on the page, reload it
+		location.reload();
+	} else {
+		window.location.href = 'photo-gallery.html';
+	}
+}
+
+
+// Co-Curricular Activities
+
+ function toggleReadMore(idNum) {
+        var clickedDots = document.getElementById("dots" + idNum);
+        var clickedMoreText = document.getElementById("more" + idNum);
+        var clickedBtnText = document.getElementById("myBtn" + idNum);
+        
+        // 1. Close all other open sections
+        // We assume IDs range from 1 to 8 based on your HTML structure.
+        for (let i = 1; i <= 8; i++) {
+            if (i !== idNum) {
+                var otherDots = document.getElementById("dots" + i);
+                var otherMoreText = document.getElementById("more" + i);
+                var otherBtnText = document.getElementById("myBtn" + i);
+
+                if (otherDots && otherMoreText && otherBtnText) {
+                    otherDots.style.display = "inline";
+                    otherMoreText.style.display = "none";
+                    otherBtnText.innerHTML = "Read More";
+                }
+            }
+        }
+
+        // 2. Toggle the currently clicked section
+        if (clickedDots.style.display === "none") {
+            // If it's currently open (dots hidden), close it.
+            clickedDots.style.display = "inline";
+            clickedBtnText.innerHTML = "Read More";
+            clickedMoreText.style.display = "none";
+        } else {
+            // If it's currently closed (dots visible), open it.
+            clickedDots.style.display = "none";
+            clickedBtnText.innerHTML = "Read less";
+            clickedMoreText.style.display = "inline";
+        }
+    }
+
+
+    // Virtual Tour
+     function playFullscreenVideo() {
+         const video = document.getElementById('fullscreenVideo');
+         video.style.display = 'block';
+
+         // Play video
+         video.play();
+
+         // Request fullscreen
+         if (video.requestFullscreen) {
+            video.requestFullscreen();
+         } else if (video.webkitRequestFullscreen) { // Safari
+            video.webkitRequestFullscreen();
+         } else if (video.msRequestFullscreen) { // IE11
+            video.msRequestFullscreen();
+         }
+
+         // Optional: hide video when exited from fullscreen
+         video.onfullscreenchange = () => {
+            if (!document.fullscreenElement) {
+               video.style.display = 'none';
+               video.pause();
+            }
+         };
+         video.onwebkitfullscreenchange = () => {
+            if (!document.webkitFullscreenElement) {
+               video.style.display = 'none';
+               video.pause();
+            }
+         };
+      }
